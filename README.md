@@ -1,6 +1,6 @@
 # App Environment Setup
 
-# TODO: Plugin/Preset files are not allowed to export objects, only functions.
+# FIXED (for a moment)... removed preset plugin.... :(
 
 ## console
 
