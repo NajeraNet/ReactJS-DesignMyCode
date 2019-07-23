@@ -166,4 +166,4 @@
 
 ## Lifecycle methods
 
-#TODO Fix the components that not render.
+# TODO Fix the components that not render.
