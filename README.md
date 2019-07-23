@@ -162,4 +162,8 @@
     "webpack-dev-server": "^3.7.2"
   }
   ```
-  
+# Component Life Cycle
+
+## Lifecycle methods
+
+#TODO Fix the components that not render.
