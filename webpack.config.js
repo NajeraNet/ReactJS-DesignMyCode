@@ -1,3 +1,30 @@
+// var config = {
+// 	entry: './main.js',
+// 	output: {
+// 		path: __dirname + '/',
+// 		filename: 'index.js',
+// 	},
+// 	devServer: {
+// 		inline: true,
+// 		port: 8080
+// 	},
+// 	module: {
+// 		rules: [
+// 			{
+// 				test: /\.jsx?$/,
+// 				exclude: /node_modules/,
+// 				use: {
+// 					loader: 'babel-loader',
+// 				},
+// 			}
+// 		]
+// 	}
+// };
+
+// module.exports = config;
+
+//    -------   ---------   ---         -----       -----     ------    //
+
 const path = require('path');
     const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -14,12 +41,11 @@ const path = require('path');
       module: {
           rules: [
             {
-                test: /\.jsx?$/,
-                exclude: /node_modules/,
+              test: /\.jsx?$/,
+              exclude: /node_modules/,
+              use: {
                 loader: 'babel-loader',
-                query: {
-                  presets: ['es2015', 'react']
-                }
+              },
             }
           ]
       },
