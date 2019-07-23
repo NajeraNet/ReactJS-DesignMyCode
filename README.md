@@ -48,36 +48,33 @@
 
 * Set compiler, server and loaders, to this, open webpack.config.js and add the following code.
 
-  ```js
+  ```js   
   const path = require('path');
   const HtmlWebpackPlugin = require('html-webpack-plugin');
 
   module.exports = {
     entry: './main.js',
     output: {
-        path: path.join(__dirname, '/bundle'),
-        filename: 'index_bundle.js'
+      path: path.join(__dirname, '/bundle'),
+      filename: 'index_bundle.js'
     },
     devServer: {
-        inline: true,
-        port: 8080
+      inline: true,
+      port: 8080
     },
     module: {
-        rules: [
-          {
-              test: /\.jsx?$/,
-              exclude: /node_modules/,
-              loader: 'babel-loader',
-              query: {
-                presets: ['es2015', 'react']
-              }
-          }
-        ]
+      rules: [{
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        },
+      }]
     },
-    plugins:[
-        new HtmlWebpackPlugin({
-          template: './index.html'
-        })
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: './index.html'
+      })
     ]
   }
   ```
@@ -137,7 +134,10 @@
 * Create the file .babelrc and paste the following code;
   ```json
   {
-    "presets": ["env", "react"]
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
   }
   ```
 
@@ -147,3 +147,18 @@
 * Run the bundle
   > npm bundle
 
+* Dependencies actually uses in master(FIXED (just for a moment));
+  ```json
+  "dependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-loader": "^8.0.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "webpack": "^4.36.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
+  }
+  ```
